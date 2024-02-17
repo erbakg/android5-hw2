@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/iv_background"
+        android:src="@drawable/ic_home_img"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_home_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="34dp"
+        android:text="@string/home_title"
+        android:textColor="@color/purple_200"
+        android:textSize="34sp"
+        app:layout_constraintTop_toBottomOf="@id/iv_home" />
+
+    <TextView
+        android:id="@+id/tv_fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/home_fname"
+        android:textColor="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_home_title" />
+
+    <EditText
+        android:id="@+id/et_fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/et_background"
+        android:hint="@string/home_fname"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/purple_200"
+        android:textColorHint="@color/purple_200"
+        app:layout_constraintTop_toBottomOf="@id/tv_fname" />
+
+    <TextView
+        android:id="@+id/tv_sname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/home_sname"
+        android:textColor="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_fname" />
+
+    <EditText
+        android:id="@+id/et_sname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/et_background"
+        android:hint="@string/home_sname"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textColor="@color/purple_200"
+        android:textColorHint="@color/purple_200"
+        app:layout_constraintTop_toBottomOf="@id/tv_sname" />
+
+    <ImageButton
+        android:id="@+id/btn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_home_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_sname" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

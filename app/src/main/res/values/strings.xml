@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">android5-2</string>
+    <string name="title_home">Home</string>
+    <string name="title_history">History</string>
+    <!--Home fragment-->
+    <string name="home_title">Love Calculator</string>
+    <string name="home_fname">First Name</string>
+    <string name="home_sname">Second Name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Result fragment-->
+    <string name="result_title">Your score is:</string>
+    <string name="result_btn">Try again</string>
+</resources>
