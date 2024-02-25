@@ -1,4 +1,4 @@
-package com.example.android5_2.data
+package com.example.android5_2.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
