@@ -15,8 +15,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.android5_2.LoveViewModel
 import com.example.android5_2.R
 import com.example.android5_2.databinding.FragmentHomeBinding
-import com.example.android5_2.ui.result.ResultFragment
-
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

@@ -1,24 +1,25 @@
 package com.example.android5_2.ui.onboarding
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import com.example.android5_2.AppViewModel
+import androidx.navigation.fragment.findNavController
+import com.example.android5_2.data.Preferences
 import com.example.android5_2.databinding.FragmentOnboardingBinding
 import com.example.android5_2.ui.onboarding.viewpager.ViewPagerAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-class OnboardingFragment: Fragment() {
+@AndroidEntryPoint
+class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: AppViewModel by activityViewModels<AppViewModel>()
 
+    @Inject
+    lateinit var pref: Preferences
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,6 +29,7 @@ class OnboardingFragment: Fragment() {
         return binding.root
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewPager()
@@ -35,11 +37,9 @@ class OnboardingFragment: Fragment() {
     }
 
     private fun initClickers() {
-        binding.btnSkip.setOnClickListener{
-            viewModel.saveOnBoardingShown()
-            val intent = requireActivity().intent
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
+        binding.btnSkip.setOnClickListener {
+            pref.setOnboardingShown()
+            findNavController().navigateUp()
         }
     }
 

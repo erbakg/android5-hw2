@@ -3,8 +3,6 @@ package com.example.android5_2
 import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.example.android5_2.data.SharedPreferencesManager
-import com.example.android5_2.extension.PREFERENCES
 import com.example.android5_2.remote.LoveApi
 import com.example.android5_2.remote.LoveModel
 import retrofit2.Call
@@ -27,16 +25,5 @@ class Repository @Inject constructor(private val api: LoveApi) {
                 Log.d("haha", "onFailure: " + t.message)
             }
         })
-    }
-    fun initSharedPrefs(context: Context){
-        SharedPreferencesManager.init(context)
-    }
-    fun saveOnboardingShown(data: Boolean) {
-        SharedPreferencesManager.saveString(PREFERENCES.ONBOARDING_SHOWN, data.toString())
-    }
-
-    fun getOnboardingShown(): Boolean {
-       val result = SharedPreferencesManager.getString(PREFERENCES.ONBOARDING_SHOWN, "")
-        return result == "true"
     }
 }
