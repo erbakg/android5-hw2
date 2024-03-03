@@ -15,7 +15,7 @@ class Repository @Inject constructor(private val api: LoveApi) {
             override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
                 if (response.isSuccessful) {
                     response.body()?.let {
-                        Log.d("haha", "onResponse: $it")
+                       App.appDatabase.loveDao().insert(it)
                         viewModel.postValue(it)
                     }
                 }

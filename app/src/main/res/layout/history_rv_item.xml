@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="16dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_fname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="haha"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/tv_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_fname"
+            android:layout_centerHorizontal="true"
+            android:text="+"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/tv_sname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_plus"
+            android:layout_centerHorizontal="true"
+            android:text="haha"
+            android:textSize="32dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_second"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rl_first"
+        android:layout_alignBottom="@+id/rl_first"
+        android:layout_toEndOf="@+id/rl_first">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="="
+            android:textSize="32dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_third"
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rl_first"
+        android:layout_alignBottom="@+id/rl_first"
+        android:layout_toEndOf="@+id/rl_second">
+
+        <TextView
+            android:id="@+id/tv_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Equal"
+            android:textSize="32dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginStart="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rl_first"
+        android:layout_alignBottom="@+id/rl_first"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/rl_third">
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/et_background"
+            android:padding="16dp"
+            android:text="Equal"
+            android:textSize="20dp" />
+    </RelativeLayout>
+</RelativeLayout>

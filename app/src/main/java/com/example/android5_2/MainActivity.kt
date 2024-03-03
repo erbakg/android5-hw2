@@ -1,7 +1,9 @@
 package com.example.android5_2
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation.findNavController
 import com.example.android5_2.data.Preferences
@@ -23,20 +25,15 @@ class MainActivity : AppCompatActivity() {
         this.supportActionBar?.hide()
         initNavControllerListener()
         initClickers()
-        initOnboarding()
-    }
-
-    private fun initOnboarding() {
-
     }
 
     private fun initClickers() {
-        binding.btnHistory.setOnClickListener {
+        binding.llHistory.setOnClickListener {
             findNavController(
                 this, R.id.nav_host_fragment_activity_main
             ).navigate(R.id.action_navigation_home_to_navigation_history)
         }
-        binding.btnHome.setOnClickListener {
+        binding.llHome.setOnClickListener {
             findNavController(
                 this, R.id.nav_host_fragment_activity_main
             ).navigate(R.id.action_navigation_history_to_navigation_home)
@@ -50,24 +47,25 @@ class MainActivity : AppCompatActivity() {
         }
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             if (destination.id == R.id.navigation_home) { // change the fragment id
-                binding.llTabBar.visibility = View.VISIBLE
-                binding.ivHome.setImageResource(R.drawable.ic_home_clicked)
+                binding.ivHomeIcon.setImageResource(R.drawable.ic_home_clicked)
                 binding.tvHome.setTextColor(resources.getColor(R.color.nav_text_clicked))
                 binding.ivHistory.setImageResource(R.drawable.ic_history)
                 binding.tvHistory.setTextColor(resources.getColor(R.color.black))
-                binding.btnHome.isEnabled = false
-                binding.btnHistory.isEnabled = true
+                binding.llHome.isEnabled = false
+                binding.llHistory.isEnabled = true
             }
             if (destination.id == R.id.navigation_history) { // change the fragment id
                 binding.ivHistory.setImageResource(R.drawable.ic_history_clicked)
                 binding.tvHistory.setTextColor(resources.getColor(R.color.nav_text_clicked))
-                binding.ivHome.setImageResource(R.drawable.ic_home)
+                binding.ivHomeIcon.setImageResource(R.drawable.ic_home)
                 binding.tvHome.setTextColor(resources.getColor(R.color.black))
-                binding.btnHistory.isEnabled = false
-                binding.btnHome.isEnabled = true
+                binding.llHistory.isEnabled = false
+                binding.llHome.isEnabled = true
             }
-            if (destination.id == R.id.onboarding) {
+            if (destination.id == R.id.onboarding || destination.id == R.id.resultFragment) {
                 binding.llTabBar.visibility = View.GONE
+            } else {
+                binding.llTabBar.visibility = View.VISIBLE
             }
 
         }
