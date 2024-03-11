@@ -7,9 +7,13 @@
     android:background="@color/purple_200"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginHorizontal="30dp"
-    android:src="@drawable/view_pager_1"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/animation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/animation1"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
     </RelativeLayout>

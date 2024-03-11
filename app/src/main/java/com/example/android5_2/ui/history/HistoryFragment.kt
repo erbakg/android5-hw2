@@ -17,8 +17,6 @@ class HistoryFragment : Fragment(), BottomSheetListener {
 
     private var _binding: FragmentHistoryBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private lateinit var adapter: LoveListAdapter
     private var callback: BottomSheetListener? = null
@@ -39,7 +37,7 @@ class HistoryFragment : Fragment(), BottomSheetListener {
     }
 
     private fun initAdapter() {
-        val list = App.appDatabase.loveDao().getAll()
+        val list = App.appDatabase.loveDao().getAllByAlphabet()
         adapter = LoveListAdapter(list as ArrayList<LoveModel>, ::onItemClick)
         binding.historyRv.adapter = adapter
     }

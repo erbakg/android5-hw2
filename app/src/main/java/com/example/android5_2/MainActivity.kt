@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 binding.llTabBar.visibility = View.VISIBLE
             }
-
         }
     }
 }

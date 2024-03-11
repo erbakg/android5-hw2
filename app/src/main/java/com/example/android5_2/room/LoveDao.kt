@@ -13,6 +13,8 @@ interface LoveDao {
 
     @Query("SELECT * FROM love_table")
     fun getAll(): List<LoveModel>
+@Query("SELECT * FROM love_table ORDER BY fname")
+    fun getAllByAlphabet(): List<LoveModel>
 
     @Update
     fun update(loveItem: LoveModel)

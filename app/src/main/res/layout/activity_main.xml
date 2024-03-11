@@ -19,17 +19,19 @@
 
     <LinearLayout
         android:id="@+id/ll_tab_bar"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="40dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
         android:weightSum="2"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_marginStart="16dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_weight="1"
             android:gravity="start"
             android:orientation="vertical">
@@ -61,8 +63,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_marginEnd="16dp"
+            android:layout_weight="1"
             android:gravity="end"
             android:orientation="vertical">
 
